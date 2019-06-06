@@ -1,6 +1,7 @@
 class ParticipantsController < ApplicationController
   def index
-    @participants = Participant.page(params[:page]).per(10)
+    @q = Participant.ransack(params[:q])
+    @participants = @q.result(:distinct => true).includes(:user, :event).page(params[:page]).per(10)
 
     render("participant_templates/index.html.erb")
   end

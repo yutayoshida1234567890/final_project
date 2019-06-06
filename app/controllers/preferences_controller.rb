@@ -10,7 +10,8 @@ class PreferencesController < ApplicationController
   end
 
   def index
-    @preferences = current_user.preferences.page(params[:page]).per(10)
+    @q = current_user.preferences.ransack(params[:q])
+    @preferences = @q.result(:distinct => true).includes(:user).page(params[:page]).per(10)
 
     render("preference_templates/index.html.erb")
   end

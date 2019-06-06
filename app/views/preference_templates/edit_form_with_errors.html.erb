@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @preference.errors.any? %>
   <% @preference.errors.full_messages.each do |message| %>
     <div class="alert">
@@ -13,48 +12,32 @@
 
 <hr>
 
-<!-- Form preference start -->
 <form action="/update_preference/<%= @preference.id %>" method="post">
-<!-- Form preference end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for cuisine start -->
   <div class="form-group">
     <label for="cuisine">
       Cuisine
     </label>
 
-    <!-- Input for cuisine start -->
     <input type="text" id="cuisine" name="cuisine" class="form-control" value="<%= @preference.cuisine %>">
-    <!-- Input for cuisine end -->
   </div>
-  <!-- Label and input for cuisine end -->
 
-  <!-- Label and input for preference_scale start -->
   <div class="form-group">
     <label for="preference_scale">
       Preference scale
     </label>
 
-    <!-- Input for preference_scale start -->
     <input type="text" id="preference_scale" name="preference_scale" class="form-control" value="<%= @preference.preference_scale %>">
-    <!-- Input for preference_scale end -->
   </div>
-  <!-- Label and input for preference_scale end -->
 
-  <!-- Label and input for dietary_restriction start -->
   <div class="form-group">
     <label for="dietary_restriction">
       Dietary restriction
     </label>
 
-    <!-- Input for dietary_restriction start -->
     <input type="text" id="dietary_restriction" name="dietary_restriction" class="form-control" value="<%= @preference.dietary_restriction %>">
-    <!-- Input for dietary_restriction end -->
   </div>
-  <!-- Label and input for dietary_restriction end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update preference

@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "rating_templates/ratings_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -62,13 +58,10 @@
 
       <% @ratings.each do |rating| %>
       <tr>
-        <!-- Display rating.id start -->
         <td>
           <%= rating.id %>
         </td>
-        <!-- Display rating.id end -->
 
-        <!-- Display rating.user_id start -->
         <td>
           <% if rating.user.present? %>
             <a href="/users/<%= rating.user.id %>">
@@ -76,9 +69,7 @@
             </a>
           <% end %>
         </td>
-        <!-- Display rating.user_id end -->
 
-        <!-- Display rating.restaurant_id start -->
         <td>
           <% if rating.restaurant.present? %>
             <a href="/restaurants/<%= rating.restaurant.id %>">
@@ -86,31 +77,22 @@
             </a>
           <% end %>
         </td>
-        <!-- Display rating.restaurant_id end -->
 
-        <!-- Display rating.rating_scale start -->
         <td>
           <%= rating.rating_scale %>
         </td>
-        <!-- Display rating.rating_scale end -->
 
-        <!-- Display rating.occasion start -->
         <td>
           <%= rating.occasion %>
         </td>
-        <!-- Display rating.occasion end -->
 
-        <!-- Display rating.created_at start -->
         <td>
           <%= time_ago_in_words(rating.created_at) %> ago
         </td>
-        <!-- Display rating.created_at end -->
 
-        <!-- Display rating.updated_at start -->
         <td>
           <%= time_ago_in_words(rating.updated_at) %> ago
         </td>
-        <!-- Display rating.updated_at end -->
 
         <td>
           <a href="/ratings/<%= rating.id %>">

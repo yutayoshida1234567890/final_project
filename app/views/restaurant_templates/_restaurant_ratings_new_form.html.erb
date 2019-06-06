@@ -1,41 +1,24 @@
-<!-- Form rating start -->
 <form action="/create_rating_from_restaurant" method="post">
-<!-- Form rating end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Input for "user_id" start -->
   <input type="hidden" name="user_id" value="<%= current_user.id %>">
-  <!-- Input for "user_id" end -->
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for restaurant_id start -->
-  <!-- Input for restaurant_id start -->
   <input type="hidden" name="restaurant_id" value="<%= @restaurant.id %>">
-  <!-- Input for restaurant_id end -->
 
-  <!-- Label and input for rating_scale start -->
   <div class="form-group">
     <label for="rating_scale">
       Rating scale
     </label>
 
-    <!-- Input for rating_scale start -->
     <input type="text" id="rating_scale" name="rating_scale" class="form-control" value="<%= @rating.rating_scale %>">
-    <!-- Input for rating_scale end -->
   </div>
-  <!-- Label and input for rating_scale end -->
 
-  <!-- Label and input for occasion start -->
   <div class="form-group">
     <label for="occasion">
       Occasion
     </label>
 
-    <!-- Input for occasion start -->
     <input type="text" id="occasion" name="occasion" class="form-control" value="<%= @rating.occasion %>">
-    <!-- Input for occasion end -->
   </div>
-  <!-- Label and input for occasion end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create rating

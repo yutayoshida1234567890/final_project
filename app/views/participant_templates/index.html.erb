@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "participant_templates/participants_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -58,13 +54,10 @@
 
       <% @participants.each do |participant| %>
       <tr>
-        <!-- Display participant.id start -->
         <td>
           <%= participant.id %>
         </td>
-        <!-- Display participant.id end -->
 
-        <!-- Display participant.event_id start -->
         <td>
           <% if participant.event.present? %>
             <a href="/events/<%= participant.event.id %>">
@@ -72,9 +65,7 @@
             </a>
           <% end %>
         </td>
-        <!-- Display participant.event_id end -->
 
-        <!-- Display participant.user_id start -->
         <td>
           <% if participant.user.present? %>
             <a href="/users/<%= participant.user.id %>">
@@ -82,25 +73,18 @@
             </a>
           <% end %>
         </td>
-        <!-- Display participant.user_id end -->
 
-        <!-- Display participant.location start -->
         <td>
           <%= participant.location %>
         </td>
-        <!-- Display participant.location end -->
 
-        <!-- Display participant.created_at start -->
         <td>
           <%= time_ago_in_words(participant.created_at) %> ago
         </td>
-        <!-- Display participant.created_at end -->
 
-        <!-- Display participant.updated_at start -->
         <td>
           <%= time_ago_in_words(participant.updated_at) %> ago
         </td>
-        <!-- Display participant.updated_at end -->
 
         <td>
           <a href="/participants/<%= participant.id %>">

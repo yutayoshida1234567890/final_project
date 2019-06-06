@@ -4,21 +4,15 @@
 
 <hr>
 
-<!-- Form event start -->
 <form action="/update_event/<%= @event.id %>" method="post">
-<!-- Form event end -->
 
-  <!-- Label and input for venue_id start -->
   <div class="form-group">
     <label for="venue_id">
       Venue
     </label>
 
-    <!-- Input for venue_id start -->
     <%= select_tag(:venue_id, options_from_collection_for_select(Restaurant.all, :id, :address, @event.venue_id), :class => "form-control") %>
-    <!-- Input for venue_id end -->
   </div>
-  <!-- Label and input for venue_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update event

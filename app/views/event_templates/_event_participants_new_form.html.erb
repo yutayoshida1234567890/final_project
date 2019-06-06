@@ -1,35 +1,22 @@
-<!-- Form participant start -->
 <form action="/create_participant_from_event" method="post">
-<!-- Form participant end -->
 
-  <!-- Label and input for event_id start -->
-  <!-- Input for event_id start -->
   <input type="hidden" name="event_id" value="<%= @event.id %>">
-  <!-- Input for event_id end -->
 
-  <!-- Label and input for user_id start -->
   <div class="form-group">
     <label for="user_id">
       User
     </label>
 
-    <!-- Input for user_id start -->
     <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :email, @participant.user_id), :class => "form-control") %>
-    <!-- Input for user_id end -->
   </div>
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for location start -->
   <div class="form-group">
     <label for="location">
       Location
     </label>
 
-    <!-- Input for location start -->
     <input type="text" id="location" name="location" class="form-control" value="<%= @participant.location %>">
-    <!-- Input for location end -->
   </div>
-  <!-- Label and input for location end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create participant

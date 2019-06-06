@@ -4,48 +4,32 @@
 
 <hr>
 
-<!-- Form rating start -->
 <form action="/update_rating/<%= @rating.id %>" method="post">
-<!-- Form rating end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for restaurant_id start -->
   <div class="form-group">
     <label for="restaurant_id">
       Restaurant
     </label>
 
-    <!-- Input for restaurant_id start -->
     <%= select_tag(:restaurant_id, options_from_collection_for_select(Restaurant.all, :id, :address, @rating.restaurant_id), :class => "form-control") %>
-    <!-- Input for restaurant_id end -->
   </div>
-  <!-- Label and input for restaurant_id end -->
 
-  <!-- Label and input for rating_scale start -->
   <div class="form-group">
     <label for="rating_scale">
       Rating scale
     </label>
 
-    <!-- Input for rating_scale start -->
     <input type="text" id="rating_scale" name="rating_scale" class="form-control" value="<%= @rating.rating_scale %>">
-    <!-- Input for rating_scale end -->
   </div>
-  <!-- Label and input for rating_scale end -->
 
-  <!-- Label and input for occasion start -->
   <div class="form-group">
     <label for="occasion">
       Occasion
     </label>
 
-    <!-- Input for occasion start -->
     <input type="text" id="occasion" name="occasion" class="form-control" value="<%= @rating.occasion %>">
-    <!-- Input for occasion end -->
   </div>
-  <!-- Label and input for occasion end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update rating

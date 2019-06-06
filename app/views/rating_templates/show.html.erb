@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link rating start -->
       <div class="col">
         <% if current_user == @rating.user %>
           <a href="/ratings/<%= @rating.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link rating end -->
 
-      <!-- Delete link rating start -->
       <div class="col">
         <% if current_user == @rating.user %>
           <a href="/delete_rating/<%= @rating.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,14 +26,12 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link rating end -->
     </div>
 
     <dl>
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @rating.user.present? %>
           <a href="/users/<%= @rating.user_id %>">
@@ -44,12 +39,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Restaurant
       </dt>
-      <!-- Display restaurant_id start -->
       <dd>
         <% if @rating.restaurant.present? %>
           <a href="/restaurants/<%= @rating.restaurant_id %>">
@@ -57,46 +50,35 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display restaurant_id end -->
 
       <dt>
         Rating scale
       </dt>
-      <!-- Display rating_scale start -->
       <dd>
         <%= @rating.rating_scale %>
       </dd>
-      <!-- Display rating_scale end -->
 
       <dt>
         Occasion
       </dt>
-      <!-- Display occasion start -->
       <dd>
         <%= @rating.occasion %>
       </dd>
-      <!-- Display occasion end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@rating.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@rating.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

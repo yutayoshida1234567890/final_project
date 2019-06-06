@@ -1,4 +1,6 @@
 ActiveAdmin.register Participant do
+
+ permit_params :event_id, :user_id, :location
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #

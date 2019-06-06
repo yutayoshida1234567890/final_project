@@ -66,13 +66,21 @@
 
         <!-- Display rating.user_id start -->
         <td>
-          <%= rating.user.email %>
+          <% if rating.user.present? %>
+            <a href="/users/<%= rating.user.id %>">
+              <%= rating.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display rating.user_id end -->
 
         <!-- Display rating.restaurant_id start -->
         <td>
-          <%= rating.restaurant.address %>
+          <% if rating.restaurant.present? %>
+            <a href="/restaurants/<%= rating.restaurant.id %>">
+              <%= rating.restaurant.address %>
+            </a>
+          <% end %>
         </td>
         <!-- Display rating.restaurant_id end -->
 

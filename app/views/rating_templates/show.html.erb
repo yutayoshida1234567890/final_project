@@ -38,7 +38,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @rating.user_id %>
+        <% if @rating.user.present? %>
+          <a href="/users/<%= @rating.user_id %>">
+            <%= @rating.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 
@@ -47,7 +51,11 @@
       </dt>
       <!-- Display restaurant_id start -->
       <dd>
-        <%= @rating.restaurant_id %>
+        <% if @rating.restaurant.present? %>
+          <a href="/restaurants/<%= @rating.restaurant_id %>">
+            <%= @rating.restaurant.address %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display restaurant_id end -->
 

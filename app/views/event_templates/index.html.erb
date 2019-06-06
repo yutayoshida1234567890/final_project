@@ -54,7 +54,11 @@
 
         <!-- Display event.venue_id start -->
         <td>
-          <%= event.venue.address %>
+          <% if event.venue.present? %>
+            <a href="/restaurants/<%= event.venue.id %>">
+              <%= event.venue.address %>
+            </a>
+          <% end %>
         </td>
         <!-- Display event.venue_id end -->
 

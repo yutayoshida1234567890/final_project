@@ -38,7 +38,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @preference.user_id %>
+        <% if @preference.user.present? %>
+          <a href="/users/<%= @preference.user_id %>">
+            <%= @preference.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 

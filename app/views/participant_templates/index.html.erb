@@ -62,13 +62,21 @@
 
         <!-- Display participant.event_id start -->
         <td>
-          <%= participant.event.venue_id %>
+          <% if participant.event.present? %>
+            <a href="/events/<%= participant.event.id %>">
+              <%= participant.event.venue_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display participant.event_id end -->
 
         <!-- Display participant.user_id start -->
         <td>
-          <%= participant.user.email %>
+          <% if participant.user.present? %>
+            <a href="/users/<%= participant.user.id %>">
+              <%= participant.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display participant.user_id end -->
 

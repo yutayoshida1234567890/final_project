@@ -43,7 +43,7 @@ class PreferencesController < ApplicationController
   def update_row
     @preference = Preference.find(params.fetch("id_to_modify"))
 
-    @preference.user_id = params.fetch("user_id")
+    
     @preference.cuisine = params.fetch("cuisine")
     @preference.preference_scale = params.fetch("preference_scale")
     @preference.dietary_restriction = params.fetch("dietary_restriction")

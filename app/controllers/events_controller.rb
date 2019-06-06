@@ -51,6 +51,14 @@ class EventsController < ApplicationController
     end
   end
 
+  def destroy_row_from_venue
+    @event = Event.find(params.fetch("id_to_remove"))
+
+    @event.destroy
+
+    redirect_to("/restaurants/#{@event.venue_id}", notice: "Event deleted successfully.")
+  end
+
   def destroy_row
     @event = Event.find(params.fetch("id_to_remove"))
 

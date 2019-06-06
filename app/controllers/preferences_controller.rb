@@ -57,6 +57,14 @@ class PreferencesController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @preference = Preference.find(params.fetch("id_to_remove"))
+
+    @preference.destroy
+
+    redirect_to("/users/#{@preference.user_id}", notice: "Preference deleted successfully.")
+  end
+
   def destroy_row
     @preference = Preference.find(params.fetch("id_to_remove"))
 

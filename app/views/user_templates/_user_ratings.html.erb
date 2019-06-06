@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Ratings
+
+    <a data-toggle="collapse" href="#user_ratings_new_form">
+      Add rating
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.ratings.each do |rating| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/ratings/<%= rating.id %>">
+          <%= rating.user_id %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

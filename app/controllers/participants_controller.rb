@@ -55,6 +55,22 @@ class ParticipantsController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @participant = Participant.find(params.fetch("id_to_remove"))
+
+    @participant.destroy
+
+    redirect_to("/users/#{@participant.user_id}", notice: "Participant deleted successfully.")
+  end
+
+  def destroy_row_from_event
+    @participant = Participant.find(params.fetch("id_to_remove"))
+
+    @participant.destroy
+
+    redirect_to("/events/#{@participant.event_id}", notice: "Participant deleted successfully.")
+  end
+
   def destroy_row
     @participant = Participant.find(params.fetch("id_to_remove"))
 

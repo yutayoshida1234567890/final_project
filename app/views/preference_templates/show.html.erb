@@ -13,17 +13,21 @@
 
       <!-- Edit link preference start -->
       <div class="col">
-        <a href="/preferences/<%= @preference.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit preference
-        </a>
+        <% if current_user == @preference.user %>
+          <a href="/preferences/<%= @preference.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit preference
+          </a>
+        <% end %>
       </div>
       <!-- Edit link preference end -->
 
       <!-- Delete link preference start -->
       <div class="col">
-        <a href="/delete_preference/<%= @preference.id %>" class="btn btn-block btn-outline-secondary">
-          Delete preference
-        </a>
+        <% if current_user == @preference.user %>
+          <a href="/delete_preference/<%= @preference.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete preference
+          </a>
+        <% end %>
       </div>
       <!-- Delete link preference end -->
     </div>

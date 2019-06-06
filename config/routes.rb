@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Participant resource:
+
+  # CREATE
+  get("/participants/new", { :controller => "participants", :action => "new_form" })
+  post("/create_participant", { :controller => "participants", :action => "create_row" })
+
+  # READ
+  get("/participants", { :controller => "participants", :action => "index" })
+  get("/participants/:id_to_display", { :controller => "participants", :action => "show" })
+
+  # UPDATE
+  get("/participants/:prefill_with_id/edit", { :controller => "participants", :action => "edit_form" })
+  post("/update_participant/:id_to_modify", { :controller => "participants", :action => "update_row" })
+
+  # DELETE
+  get("/delete_participant/:id_to_remove", { :controller => "participants", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Preference resource:
 
   # CREATE

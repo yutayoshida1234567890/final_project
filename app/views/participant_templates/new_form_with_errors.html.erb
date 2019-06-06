@@ -1,0 +1,68 @@
+<!-- Validation failure messages -->
+<% if @participant.present? %>
+  <% if @participant.errors.any? %>
+    <% @participant.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new participant
+</h1>
+
+
+<hr>
+
+<!-- Form participant start -->
+<form action="/create_participant" method="post">
+<!-- Form participant end -->
+
+  <!-- Label and input for event_id start -->
+  <div class="form-group">
+    <label for="event_id">
+      Event
+    </label>
+
+    <!-- Input for event_id start -->
+    <input type="text" id="event_id" name="event_id" class="form-control" value="<%= @participant.event_id %>">
+    <!-- Input for event_id end -->
+  </div>
+  <!-- Label and input for event_id end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @participant.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for location start -->
+  <div class="form-group">
+    <label for="location">
+      Location
+    </label>
+
+    <!-- Input for location start -->
+    <input type="text" id="location" name="location" class="form-control" value="<%= @participant.location %>">
+    <!-- Input for location end -->
+  </div>
+  <!-- Label and input for location end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create participant
+  </button>
+</form>
+
+<hr>
+
+<a href="/participants">
+  Go back
+</a>

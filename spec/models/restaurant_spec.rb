@@ -4,6 +4,8 @@ RSpec.describe Restaurant, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:events) }
+
     it { should have_many(:ratings) }
 
     end

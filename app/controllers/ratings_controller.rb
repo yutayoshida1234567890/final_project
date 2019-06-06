@@ -60,7 +60,7 @@ class RatingsController < ApplicationController
   def update_row
     @rating = Rating.find(params.fetch("id_to_modify"))
 
-    @rating.user_id = params.fetch("user_id")
+    
     @rating.restaurant_id = params.fetch("restaurant_id")
     @rating.rating_scale = params.fetch("rating_scale")
     @rating.occasion = params.fetch("occasion")

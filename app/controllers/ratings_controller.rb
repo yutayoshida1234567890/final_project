@@ -34,6 +34,23 @@ class RatingsController < ApplicationController
     end
   end
 
+  def create_row_from_restaurant
+    @rating = Rating.new
+
+    @rating.user_id = params.fetch("user_id")
+    @rating.restaurant_id = params.fetch("restaurant_id")
+    @rating.rating_scale = params.fetch("rating_scale")
+    @rating.occasion = params.fetch("occasion")
+
+    if @rating.valid?
+      @rating.save
+
+      redirect_to("/restaurants/#{@rating.restaurant_id}", notice: "Rating created successfully.")
+    else
+      render("rating_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @rating = Rating.find(params.fetch("prefill_with_id"))
 

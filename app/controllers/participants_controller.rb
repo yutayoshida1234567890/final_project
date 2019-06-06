@@ -33,6 +33,22 @@ class ParticipantsController < ApplicationController
     end
   end
 
+  def create_row_from_event
+    @participant = Participant.new
+
+    @participant.event_id = params.fetch("event_id")
+    @participant.user_id = params.fetch("user_id")
+    @participant.location = params.fetch("location")
+
+    if @participant.valid?
+      @participant.save
+
+      redirect_to("/events/#{@participant.event_id}", notice: "Participant created successfully.")
+    else
+      render("participant_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @participant = Participant.find(params.fetch("prefill_with_id"))
 

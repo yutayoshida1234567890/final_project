@@ -6,6 +6,7 @@ class EventsController < ApplicationController
   end
 
   def show
+    @participant = Participant.new
     @event = Event.find(params.fetch("id_to_display"))
 
     render("event_templates/show.html.erb")
@@ -26,6 +27,20 @@ class EventsController < ApplicationController
       @event.save
 
       redirect_back(:fallback_location => "/events", :notice => "Event created successfully.")
+    else
+      render("event_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_restaurant
+    @event = Event.new
+
+    @event.venue_id = params.fetch("venue_id")
+
+    if @event.valid?
+      @event.save
+
+      redirect_to("/restaurants/#{@event.venue_id}", notice: "Event created successfully.")
     else
       render("event_templates/new_form_with_errors.html.erb")
     end

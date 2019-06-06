@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Preference resource:
+
+  # CREATE
+  get("/preferences/new", { :controller => "preferences", :action => "new_form" })
+  post("/create_preference", { :controller => "preferences", :action => "create_row" })
+
+  # READ
+  get("/preferences", { :controller => "preferences", :action => "index" })
+  get("/preferences/:id_to_display", { :controller => "preferences", :action => "show" })
+
+  # UPDATE
+  get("/preferences/:prefill_with_id/edit", { :controller => "preferences", :action => "edit_form" })
+  post("/update_preference/:id_to_modify", { :controller => "preferences", :action => "update_row" })
+
+  # DELETE
+  get("/delete_preference/:id_to_remove", { :controller => "preferences", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Restaurant resource:
 
   # CREATE

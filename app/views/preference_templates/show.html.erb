@@ -1,0 +1,91 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Preference #<%= @preference.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/preferences" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link preference start -->
+      <div class="col">
+        <a href="/preferences/<%= @preference.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit preference
+        </a>
+      </div>
+      <!-- Edit link preference end -->
+
+      <!-- Delete link preference start -->
+      <div class="col">
+        <a href="/delete_preference/<%= @preference.id %>" class="btn btn-block btn-outline-secondary">
+          Delete preference
+        </a>
+      </div>
+      <!-- Delete link preference end -->
+    </div>
+
+    <dl>
+      <dt>
+        User
+      </dt>
+      <!-- Display user_id start -->
+      <dd>
+        <%= @preference.user_id %>
+      </dd>
+      <!-- Display user_id end -->
+
+      <dt>
+        Cuisine
+      </dt>
+      <!-- Display cuisine start -->
+      <dd>
+        <%= @preference.cuisine %>
+      </dd>
+      <!-- Display cuisine end -->
+
+      <dt>
+        Preference scale
+      </dt>
+      <!-- Display preference_scale start -->
+      <dd>
+        <%= @preference.preference_scale %>
+      </dd>
+      <!-- Display preference_scale end -->
+
+      <dt>
+        Dietary restriction
+      </dt>
+      <!-- Display dietary_restriction start -->
+      <dd>
+        <%= @preference.dietary_restriction %>
+      </dd>
+      <!-- Display dietary_restriction end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@preference.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@preference.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

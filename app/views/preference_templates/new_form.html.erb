@@ -1,0 +1,69 @@
+<h1>
+  Add a new preference
+</h1>
+
+
+<hr>
+
+<!-- Form preference start -->
+<form action="/create_preference" method="post">
+<!-- Form preference end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for cuisine start -->
+  <div class="form-group">
+    <label for="cuisine">
+      Cuisine
+    </label>
+
+    <!-- Input for cuisine start -->
+    <input type="text" id="cuisine" name="cuisine" class="form-control">
+    <!-- Input for cuisine end -->
+  </div>
+  <!-- Label and input for cuisine end -->
+
+  <!-- Label and input for preference_scale start -->
+  <div class="form-group">
+    <label for="preference_scale">
+      Preference scale
+    </label>
+
+    <!-- Input for preference_scale start -->
+    <input type="text" id="preference_scale" name="preference_scale" class="form-control">
+    <!-- Input for preference_scale end -->
+  </div>
+  <!-- Label and input for preference_scale end -->
+
+  <!-- Label and input for dietary_restriction start -->
+  <div class="form-group">
+    <label for="dietary_restriction">
+      Dietary restriction
+    </label>
+
+    <!-- Input for dietary_restriction start -->
+    <input type="text" id="dietary_restriction" name="dietary_restriction" class="form-control">
+    <!-- Input for dietary_restriction end -->
+  </div>
+  <!-- Label and input for dietary_restriction end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create preference
+  </button>
+</form>
+
+<hr>
+
+<a href="/preferences">
+  Go back
+</a>

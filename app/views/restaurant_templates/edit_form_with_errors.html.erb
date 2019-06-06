@@ -1,0 +1,77 @@
+<!-- Validation failure messages -->
+<% if @restaurant.errors.any? %>
+  <% @restaurant.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit restaurant #<%= @restaurant.id %>
+</h1>
+
+<hr>
+
+<!-- Form restaurant start -->
+<form action="/update_restaurant/<%= @restaurant.id %>" method="post">
+<!-- Form restaurant end -->
+
+  <!-- Label and input for address start -->
+  <div class="form-group">
+    <label for="address">
+      Address
+    </label>
+
+    <!-- Input for address start -->
+    <input type="text" id="address" name="address" class="form-control" value="<%= @restaurant.address %>">
+    <!-- Input for address end -->
+  </div>
+  <!-- Label and input for address end -->
+
+  <!-- Label and input for cuisine start -->
+  <div class="form-group">
+    <label for="cuisine">
+      Cuisine
+    </label>
+
+    <!-- Input for cuisine start -->
+    <input type="text" id="cuisine" name="cuisine" class="form-control" value="<%= @restaurant.cuisine %>">
+    <!-- Input for cuisine end -->
+  </div>
+  <!-- Label and input for cuisine end -->
+
+  <!-- Label and input for price start -->
+  <div class="form-group">
+    <label for="price">
+      Price
+    </label>
+
+    <!-- Input for price start -->
+    <input type="text" id="price" name="price" class="form-control" value="<%= @restaurant.price %>">
+    <!-- Input for price end -->
+  </div>
+  <!-- Label and input for price end -->
+
+  <!-- Label and input for yelp_id start -->
+  <div class="form-group">
+    <label for="yelp_id">
+      Yelp
+    </label>
+
+    <!-- Input for yelp_id start -->
+    <input type="text" id="yelp_id" name="yelp_id" class="form-control" value="<%= @restaurant.yelp_id %>">
+    <!-- Input for yelp_id end -->
+  </div>
+  <!-- Label and input for yelp_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update restaurant
+  </button>
+</form>
+
+<hr>
+
+<a href="/restaurants">
+  Go back
+</a>

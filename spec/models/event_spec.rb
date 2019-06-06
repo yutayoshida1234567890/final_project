@@ -4,6 +4,8 @@ RSpec.describe Event, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:participants) }
+
     it { should belong_to(:venue) }
 
     end

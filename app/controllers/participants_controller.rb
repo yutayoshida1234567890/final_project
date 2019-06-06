@@ -1,6 +1,6 @@
 class ParticipantsController < ApplicationController
   def index
-    @participants = Participant.all
+    @participants = Participant.page(params[:page]).per(10)
 
     render("participant_templates/index.html.erb")
   end

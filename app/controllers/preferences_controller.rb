@@ -10,7 +10,7 @@ class PreferencesController < ApplicationController
   end
 
   def index
-    @preferences = Preference.all
+    @preferences = current_user.preferences.page(params[:page]).per(10)
 
     render("preference_templates/index.html.erb")
   end

@@ -1,0 +1,69 @@
+<h1>
+  Add a new rating
+</h1>
+
+
+<hr>
+
+<!-- Form rating start -->
+<form action="/create_rating" method="post">
+<!-- Form rating end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for restaurant_id start -->
+  <div class="form-group">
+    <label for="restaurant_id">
+      Restaurant
+    </label>
+
+    <!-- Input for restaurant_id start -->
+    <input type="text" id="restaurant_id" name="restaurant_id" class="form-control">
+    <!-- Input for restaurant_id end -->
+  </div>
+  <!-- Label and input for restaurant_id end -->
+
+  <!-- Label and input for rating_scale start -->
+  <div class="form-group">
+    <label for="rating_scale">
+      Rating scale
+    </label>
+
+    <!-- Input for rating_scale start -->
+    <input type="text" id="rating_scale" name="rating_scale" class="form-control">
+    <!-- Input for rating_scale end -->
+  </div>
+  <!-- Label and input for rating_scale end -->
+
+  <!-- Label and input for occasion start -->
+  <div class="form-group">
+    <label for="occasion">
+      Occasion
+    </label>
+
+    <!-- Input for occasion start -->
+    <input type="text" id="occasion" name="occasion" class="form-control">
+    <!-- Input for occasion end -->
+  </div>
+  <!-- Label and input for occasion end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create rating
+  </button>
+</form>
+
+<hr>
+
+<a href="/ratings">
+  Go back
+</a>

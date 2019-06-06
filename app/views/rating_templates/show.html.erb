@@ -1,0 +1,91 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Rating #<%= @rating.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/ratings" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link rating start -->
+      <div class="col">
+        <a href="/ratings/<%= @rating.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit rating
+        </a>
+      </div>
+      <!-- Edit link rating end -->
+
+      <!-- Delete link rating start -->
+      <div class="col">
+        <a href="/delete_rating/<%= @rating.id %>" class="btn btn-block btn-outline-secondary">
+          Delete rating
+        </a>
+      </div>
+      <!-- Delete link rating end -->
+    </div>
+
+    <dl>
+      <dt>
+        User
+      </dt>
+      <!-- Display user_id start -->
+      <dd>
+        <%= @rating.user_id %>
+      </dd>
+      <!-- Display user_id end -->
+
+      <dt>
+        Restaurant
+      </dt>
+      <!-- Display restaurant_id start -->
+      <dd>
+        <%= @rating.restaurant_id %>
+      </dd>
+      <!-- Display restaurant_id end -->
+
+      <dt>
+        Rating scale
+      </dt>
+      <!-- Display rating_scale start -->
+      <dd>
+        <%= @rating.rating_scale %>
+      </dd>
+      <!-- Display rating_scale end -->
+
+      <dt>
+        Occasion
+      </dt>
+      <!-- Display occasion start -->
+      <dd>
+        <%= @rating.occasion %>
+      </dd>
+      <!-- Display occasion end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@rating.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@rating.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

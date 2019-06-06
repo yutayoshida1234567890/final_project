@@ -1,0 +1,112 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All ratings
+    </h1>
+
+    <a href="/ratings/new" class="btn btn-block btn-outline-secondary">
+      Add a new rating
+    </a>
+  </div>
+</div>
+
+<!-- Ransack Code start -->
+
+<!-- Ransack Code end -->
+
+<!-- Location Map Code start -->
+
+<!-- Location Map Code end -->
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Restaurant
+        </th>
+
+        <th>
+          Rating scale
+        </th>
+
+        <th>
+          Occasion
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @ratings.each do |rating| %>
+      <tr>
+        <!-- Display rating.id start -->
+        <td>
+          <%= rating.id %>
+        </td>
+        <!-- Display rating.id end -->
+
+        <!-- Display rating.user_id start -->
+        <td>
+          <%= rating.user_id %>
+        </td>
+        <!-- Display rating.user_id end -->
+
+        <!-- Display rating.restaurant_id start -->
+        <td>
+          <%= rating.restaurant_id %>
+        </td>
+        <!-- Display rating.restaurant_id end -->
+
+        <!-- Display rating.rating_scale start -->
+        <td>
+          <%= rating.rating_scale %>
+        </td>
+        <!-- Display rating.rating_scale end -->
+
+        <!-- Display rating.occasion start -->
+        <td>
+          <%= rating.occasion %>
+        </td>
+        <!-- Display rating.occasion end -->
+
+        <!-- Display rating.created_at start -->
+        <td>
+          <%= time_ago_in_words(rating.created_at) %> ago
+        </td>
+        <!-- Display rating.created_at end -->
+
+        <!-- Display rating.updated_at start -->
+        <td>
+          <%= time_ago_in_words(rating.updated_at) %> ago
+        </td>
+        <!-- Display rating.updated_at end -->
+
+        <td>
+          <a href="/ratings/<%= rating.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

@@ -17,9 +17,11 @@
         <!-- Show link end -->
 
         <!-- Delete link start -->
-        <a href="/delete_rating_from_restaurant/<%= rating.id %>">
-          Delete
-        </a>
+        <%if current_user == rating.user %>
+          <a href="/delete_rating_from_restaurant/<%= rating.id %>">
+            Delete
+          </a>
+        <% end %>
         <!-- Delete link end -->
 
       </li>
